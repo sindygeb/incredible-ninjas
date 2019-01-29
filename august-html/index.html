@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <title>Input Page</title>
+
+    <style>
+        /* used style in html head for simplicity for now */
+        body{
+            background-color: #cccccc;
+        }
+
+        label {
+            font-size: 150%;
+        }
+
+        .jtron-head, .user-upload {
+            background-color: #eeeeee;
+            padding: 20px;
+        }
+        .lead {
+            font-size: 150%;
+            color: #777777;
+        }
+        .form-control-file {
+            font-size: 120%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron jtron-head text-center">
+                    <h1 class="display-4 font-weight-normal">When I was 18...</h1>
+                    <p class="lead font-weight-bold">Enter your name and age, along with a clear picture of your face
+                        to get started!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+                <div class="user-upload">
+                    <form>
+                        <div class="form-group">
+                            <label for="user-name">Name Input</label>
+                            <input type="text" class="form-control form-control-lg" id="user-name" placeholder="John Smith">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user-age">Age Input</label>
+                            <input type="number" class="form-control form-control-lg" id="user-age">
+                        </div>
+
+                        <div class="form-group">
+                            <!-- need to look into how uploading files work -->
+                            <label for="user-picture">Upload Picture</label>
+                            <input type="file" class="form-control-file" id="user-picture">
+                        </div>
+
+                        <input class="btn btn-success btn-lg" type="submit" value="Submit">
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="../javascript/app.js"></script>
+</body>
+
+</html>
