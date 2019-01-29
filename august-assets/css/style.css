@@ -1,0 +1,28 @@
+body {
+    background-image: url("../images/background_header.jpg");
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 150%;
+}
+
+.card-subtitle {
+    font-size: 140%;
+}
+
+.text-muted {
+    font-size: 100%;
+}
+
+img {
+    margin-bottom: 10px;
+}
+
+button.get-music {
+    background-color: #00aea7;
+    color: #eeeeee;
+}
