@@ -4,194 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
-  <title>Results Page</title>
-  <style>
-    body {
-      background-color: lightblue;
-    }
-    .card {
-      margin-bottom: 20px;
-    }
-    .card-title {
-      font-size: 150%;
-    }
-    .card-subtitle {
-      font-size: 140%;
-    }
-    .text-muted {
-      font-size: 100%;
-    }
-    img {
-      margin-bottom: 10px;
-    }
-    button.get-music {
-      background-color: #00aea7;
-      color: #eeeeee;
-    }
-  </style>
+  <title>When I Was 18</title>
+
+  <!-- Bootstrap Reference-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <div class="jumbotron jumbotron-fluid text-center bg-white">
-          <!-- Span class for grabbing the users name and displaying it -->
-          <h1 class="display-4 font-weight-normal">Hey, <span class="user-name"></span>-Here are your
-            favorite jams from back in
-            the day!</h1>
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div id="myModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <h1 id="introText">Hey Music Fan!</h1>
+                            <p>Have you ever heard a song and it made you think of the 'good old days'?
+                                <br>
+                                Yeah? Cool, just upload your MOST RECENT pic and we'll make you feel that way!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- Container that will hold the results and related values -->
-  <div class="container">
-    <div class="row user-results text-center">
-      <!-- Append the results here -->
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <div class="card-body">
-            <img src="https://via.placeholder.com/200">
-            <h5 class="card-title">"Song Title"</h5>
-            <h6 class="card-subtitle mb-2">Artist Name</h6>
-            <div class="card-text">
-              <a href="#" class="card-link">Link to the song / track</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 more-options">
-        <div class="card p-5">
-          <div class="card-body">
-            <h5 class="card-title">NOT A FAN OF THESE?</h5>
-            <h6 class="card-subtitle mb-2 text-muted">NO PROBLEM - ENTER YOUR BIRTH YEAR<br />BELOW AND WE'LL FIND YOU NEW MATCHES.</h6>
-            <div class="form-inline">
-              <input class="form-control mr-3" type="number" placeholder="ENTER YEAR" style="width: 40%;">
-              <button type="submit" class="btn get-music p-3">GET MY TUNES!</button>
-              <div class="decade-switch mt-4">
-                <button type="button" class="btn btn-dark mr-3">NEXT DECADE, DUDE.</button>
-                <button type="button" class="btn btn-dark">BACK A DECADE!</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+    <script src="assets/javascript/site.js"></script>
 </body>
 </html>
-Collapse 
-
-Message Input
-
-
-Message Matt, August Johnson, tmitka, Rob De Bleeckere
