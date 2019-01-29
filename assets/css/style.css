@@ -1,7 +1,27 @@
+/* Universal stylings */
 body {
     background-image: url("../images/background_header.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
+img {
+    margin-bottom: 10px;
+}
+
+nav {
+    background-color: #00aea7;
+}
+/* Styling the nav elements and links */
+a.nav-item {
+    color: #eeeeee;
+    margin-right: 12px;
+}
+
+.active {
+    text-decoration: underline;
+}
+/* Styling the cards that will contain the users results */
 .card {
     margin-bottom: 20px;
 }
@@ -17,12 +37,56 @@ body {
 .text-muted {
     font-size: 100%;
 }
-
-img {
-    margin-bottom: 10px;
-}
-
+/* Styling for the buttons */
 button.get-music {
     background-color: #00aea7;
     color: #eeeeee;
+    border-radius: 45px;
+    padding: 20px;
 }
+
+input.get-music {
+    border-radius: 45px;
+    padding: 20px;
+    background-color: #eeeeee;
+    color: #00aea7;
+    width: 15%;
+}
+
+button.add-decade, .subtract-decade {
+    border-radius: 45px;
+    padding: 10px;
+}
+
+input.user-new-year {
+    height: 45px;
+}
+
+.container-fluid {
+    margin-left: 75px;
+}
+/* Styling for the upload file button / input */
+/* Styling the wrapper that contains the button and the input file */
+/* NOTE! Styling it this way will not display to user the file they have chosen, as it is hidden behind the 'fake' button.
+Was not able to find other viable ways to style the browse file input. Either it looks ugly but is the most user friendly, or looks good but will exclude a feature. */
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+/* Styling a button to look like a 'prettier' version of the default input file button */
+  .btn-test-hide {
+    border-radius: 45px;
+    border: none;
+    color: #eeeeee;
+    background-color: #777777;
+    padding: 15px;
+  }
+/* Hiding the actual input file */
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
