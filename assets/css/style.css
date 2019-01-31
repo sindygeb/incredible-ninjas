@@ -4,12 +4,16 @@ body {
 #myModal {
     padding: 20px;
 }
+
 #introText {
     padding: 20px;
 }
 p {
     padding: 20px;
 }
-.modal-body {
-    background-image: url("../images/test.png")
+#upload {
+    font-size: 14px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #000000;
 }
