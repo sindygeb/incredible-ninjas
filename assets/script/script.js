@@ -2,14 +2,14 @@
 // INSIDE that function initiate AJAX call with file
 //--------------------------------------------------------------------------------------
 $(document).ready(function () {
-
+    console.log("lets-a-go");
 });
 
 $("#submit").click(function () {
 
     // Variable for file path to be uploaded
-    // var faceFile = "./images/test.jpg";
-    var faceFile = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Judi_Dench_at_the_BAFTAs_2007.jpg/330px-Judi_Dench_at_the_BAFTAs_2007.jpg";
+    var faceFile = "~/images/test.jpg";
+    // var faceFile = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Judi_Dench_at_the_BAFTAs_2007.jpg/330px-Judi_Dench_at_the_BAFTAs_2007.jpg";
     // API Key:
     var apiKey = "fc3rHjH50Us_jhP1zC0V26KkykD96fib";
     // API Secret
@@ -19,7 +19,7 @@ $("#submit").click(function () {
     var apiAttr = "age";
     // Build URL with key & attribute request
     var facePlusURL = "https://api-us.faceplusplus.com/facepp/v3/detect" + "?api_key=" + apiKey +
-        "&api_secret=" + apiSecret + "&image_url=" + faceFile + "&return_attributes=" + apiAttr;
+        "&api_secret=" + apiSecret + "&image_file=" + faceFile + "&return_attributes=" + apiAttr;
 
     console.log(facePlusURL);
 
@@ -32,7 +32,6 @@ $("#submit").click(function () {
         .then(function (response) {
             var ageResponse = response.faces[0].attributes.age.value;
             console.log(ageResponse);
-            console.log(response.faces[0].attributes.age.value);
         });
 
 })
