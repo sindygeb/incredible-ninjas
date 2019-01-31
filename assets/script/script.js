@@ -1,9 +1,3 @@
-// Click or other function to intitiate Ajax call to Face++ 
-// INSIDE that function initiate AJAX call with file
-//--------------------------------------------------------------------------------------
-$(document).ready(function () {
-    console.log("lets-a-go");
-});
 
 $("submit").click(function () {
 
