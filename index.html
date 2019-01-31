@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Varela+Round" rel="stylesheet">
+    <!-- Change Title when finished -->
     <title>Input Page</title>
 </head>
 
@@ -16,10 +20,10 @@
     <!-- Sticky top Div container for the navbar -->
     <div class="sticky-top">
         <!-- Start of nav bar class and Divs -->
-        <nav class="navbar text-white">
+        <nav class="navbar text-white" id="navBar">
             <!-- Title and our page image-icon. Inside the sticky navbar but not a link. -->
-            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="https://via.placeholder.com/200"
-                        width="30" height="30" alt=""></Span>WHEN I WAS 18</span>
+            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="assets/images/logo.png"
+                 width="auto" height="15" alt="" id="logoImg"></Span></span>
 
             <!-- Links leading to other pages. -->
             <a class="nav-item navbar-link active" href="index.html">HOME</a>
@@ -31,11 +35,17 @@
     <!-- Jumbotron displaying the users name and the image they uploaded. -->
     <div class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container-fluid">
-            <h1 class="display-4 font-weight-bold text-white">HEY THERE, MUSIC LOVER.</h1>
-            <p class="lead text-white">HAVE YOU EVER HEARD A SONG AND THOUGHT 'THIS TAKES ME BACK TO THE GOOD OLD
-                DAYS'?<br />
-                JUST UPLOAD YOUR <span class="font-weight-bold">MOST RECENT PHOTO*</span>, AND WE'LL BRING YOU THE JAMS
+            <h1 class="display-4 font-weight-bold text-white" id="welcomeText"><span id="heyThere">HEY THERE,</span> MUSIC LOVER.</h1>
+            <br><br>
+            <p class="text-left">HAVE YOU EVER HEARD A SONG AND THOUGHT <span class="font-weight-bold" id="heavyText">  THIS TAKES ME BACK TO THE GOOD OLD
+                DAYS'?</span>
+                
+                <br><br>
+
+                TELL US WHO YOU ARE, AND JUST UPLOAD YOUR <span class="font-weight-bold" id="heavyText">MOST RECENT PHOTO</span> AND WE'LL BRING YOU THE JAMS
                 THAT BRING ON THE NOSTALGIA!</p>
+
+                <br>
 
             <!-- Start of the input form -->
             <div class="user-upload">
@@ -46,8 +56,8 @@
                     </div>
 
                     <div class="form-group">
-                        <!-- need to look into how uploading files work -->
-                        <input type="file" name="myfile"> <span class="file-chosen text-white ml-3"></span>
+                        <input type="text" class="form-control form-control-lg col-xl-2 mb-4" id="user-link"
+                            placeholder="ENTER THE LINK">
                     </div>
 
                     <input class="btn btn-success btn-lg get-music" type="submit" value="GET MY TUNES!">
