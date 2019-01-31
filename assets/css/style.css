@@ -12,10 +12,16 @@ img {
 nav {
     background-color: #00aea7;
 }
-/* Styling the nav elements and links */
-a.nav-item {
+
+.page-title {
     color: #eeeeee;
-    margin-right: 12px;
+    font-weight: 600;
+    font-size: 150%;
+}
+/* Styling the nav elements and links */
+li.nav-item a {
+    color: #eeeeee;
+    /* margin-left: 15px; */
 }
 
 .active {
@@ -45,14 +51,6 @@ button.get-music {
     padding: 20px;
 }
 
-input.get-music {
-    border-radius: 45px;
-    padding: 20px;
-    background-color: #eeeeee;
-    color: #00aea7;
-    width: 15%;
-}
-
 button.add-decade, .subtract-decade {
     border-radius: 45px;
     padding: 10px;
@@ -62,6 +60,12 @@ input.user-new-year {
     height: 45px;
 }
 
-.container-fluid {
+/* .container-fluid {
     margin-left: 75px;
+} */
+
+@media (max-width: 576px) {
+    a.nav-item {
+        margin-left: 0px;
+    }
 }

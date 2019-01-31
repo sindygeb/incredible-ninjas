@@ -13,47 +13,65 @@
 
 <body>
 
-    <!-- Sticky top Div container for the navbar -->
-    <div class="sticky-top">
-        <!-- Start of nav bar class and Divs -->
-        <nav class="navbar text-white">
-            <!-- Title and our page image-icon. Inside the sticky navbar but not a link. -->
-            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="https://via.placeholder.com/200"
-                        width="30" height="30" alt=""></Span>WHEN I WAS 18</span>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="col-xl-10 col-lg-9 col-md-10 col-sm-9 col-8">
+            <Span class="page-icon mr-3"><img src="https://via.placeholder.com/200" width="30" height="30" alt=""></Span><span
+                class="page-title">WHEN
+                I WAS 18</span>
+        </div>
 
-            <!-- Links leading to other pages. -->
-            <a class="nav-item navbar-link active" href="index.html">HOME</a>
-            <a class="nav-item navbar-link" href="results.html">RESULTS</a>
-            <a class="nav-item navbar-link" href="#">ABOUT</a>
-        </nav>
-    </div>
+        <div class="col-xl-2 col-lg-3 col-md-2 col-sm-3 col-4">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="results.html">RESULTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- Jumbotron displaying the users name and the image they uploaded. -->
-    <div class="jumbotron jumbotron-fluid bg-transparent">
-        <div class="container-fluid">
-            <h1 class="display-4 font-weight-bold text-white">HEY THERE, MUSIC LOVER.</h1>
-            <p class="lead text-white">HAVE YOU EVER HEARD A SONG AND THOUGHT 'THIS TAKES ME BACK TO THE GOOD OLD
-                DAYS'?<br />
-                JUST UPLOAD YOUR <span class="font-weight-bold">MOST RECENT PHOTO*</span>, AND WE'LL BRING YOU THE JAMS
-                THAT BRING ON THE NOSTALGIA!</p>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron bg-transparent">
+                <h1 class="display-4 font-weight-bold text-white">HEY THERE, MUSIC LOVER.</h1>
+                <p class="lead text-white">HAVE YOU EVER HEARD A SONG AND THOUGHT 'THIS TAKES ME BACK TO THE GOOD OLD
+                    DAYS'?<br />
+                    JUST UPLOAD YOUR <span class="font-weight-bold">MOST RECENT PHOTO*</span>, AND WE'LL BRING YOU THE
+                    JAMS
+                    THAT BRING ON THE NOSTALGIA!</p>
 
-            <!-- Start of the input form -->
-            <div class="user-upload">
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control form-control-lg col-xl-2 mb-4" id="user-name"
-                            placeholder="ENTER YOUR NAME">
-                    </div>
+                <!-- Start of the input form -->
+                <div class="user-upload">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg col-xl-2 mb-4" id="user-name"
+                                placeholder="ENTER YOUR NAME">
+                        </div>
 
-                    <div class="form-group">
-                        <!-- need to look into how uploading files work -->
-                        <input type="file" name="myfile"> <span class="file-chosen text-white ml-3"></span>
-                    </div>
+                        <div class="form-group">
+                            <!-- need to look into how uploading files work -->
+                            <input type="file" name="myfile"> <span class="file-chosen text-white ml-3"></span>
+                        </div>
 
-                    <input class="btn btn-success btn-lg get-music" type="submit" value="GET MY TUNES!">
-                </form>
+                        <button class="btn btn-success btn-lg get-music" type="submit">GET MY TUNES!</button>
+                    </form>
+                </div>
+                <!-- End of jumbotron and container -->
             </div>
-            <!-- End of jumbotron and container -->
         </div>
     </div>
 
