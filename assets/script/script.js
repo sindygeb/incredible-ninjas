@@ -1,5 +1,5 @@
 
-$("submit").click(function () {
+$(".get-music").click(function () {
 
     // Variable for file path to be uploaded
     // var faceFile = "~/images/test.jpg";
@@ -23,22 +23,23 @@ $("submit").click(function () {
         method: "POST"
     })
         .then(function (response) {
+            console.log(response);
             var ageResponse = response.faces[0].attributes.age.value;
             console.log(ageResponse);
         });
 
-})
+});
 
 // Firebase junk goes here
-var config = {
-    apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
-    authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
-    databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
-    projectId: "train-scheduler-assignme-c1fd7",
-    storageBucket: "",
-    messagingSenderId: "931949793399"
-};
-firebase.initializeApp(config);
+// var config = {
+//     apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
+//     authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
+//     databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
+//     projectId: "train-scheduler-assignme-c1fd7",
+//     storageBucket: "",
+//     messagingSenderId: "931949793399"
+// };
+// firebase.initializeApp(config);
 
-var database = firebase.database();
+// var database = firebase.database();
 
