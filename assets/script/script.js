@@ -1,20 +1,21 @@
-var config = {
-    apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
-    authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
-    databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
-    projectId: "train-scheduler-assignme-c1fd7",
-    storageBucket: "",
-    messagingSenderId: "931949793399"
-};
-firebase.initializeApp(config);
+// var config = {
+//     apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
+//     authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
+//     databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
+//     projectId: "train-scheduler-assignme-c1fd7",
+//     storageBucket: "",
+//     messagingSenderId: "931949793399"
+// };
+// firebase.initializeApp(config);
 
-var database = firebase.database();
+// var database = firebase.database();
 
 $(".get-music").click(function (event) {
     event.preventDefault();
+
     // Variable for file path to be uploaded
     // var faceFile = "~/images/test.jpg";
-    var faceFile = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Judi_Dench_at_the_BAFTAs_2007.jpg/330px-Judi_Dench_at_the_BAFTAs_2007.jpg";
+    var faceLink = $("#user-link").val().trim();
     // API Key:
     var apiKey = "fc3rHjH50Us_jhP1zC0V26KkykD96fib";
     // API Secret
@@ -24,7 +25,7 @@ $(".get-music").click(function (event) {
     var apiAttr = "age";
     // Build URL with key & attribute request
     var facePlusURL = "https://api-us.faceplusplus.com/facepp/v3/detect" + "?api_key=" + apiKey +
-        "&api_secret=" + apiSecret + "&image_url=" + faceFile + "&return_attributes=" + apiAttr;
+        "&api_secret=" + apiSecret + "&image_url=" + faceLink + "&return_attributes=" + apiAttr;
 
     console.log(facePlusURL);
 
@@ -38,6 +39,10 @@ $(".get-music").click(function (event) {
             console.log(ageResponse);
         });
 
+        database.ref().push({
+            Age: ageResponse,
+
+        })
 });
 
 
