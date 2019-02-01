@@ -23,7 +23,7 @@ $(".get-music").click(function (event) {
     var apiSecret = "xq072ifDu6LeqQf3uOtY0oj6EkxJlGqf";
     // Attribute request
     // Can use none; gender; AGE; smiling; headpose; facequality; + more in API documentation
-    var apiAttr = "age";
+    var apiAttr = "age,gender";
     // Build URL with key & attribute request
     var facePlusURL = "https://api-us.faceplusplus.com/facepp/v3/detect" + "?api_key=" + apiKey +
         "&api_secret=" + apiSecret + "&image_url=" + faceLink + "&return_attributes=" + apiAttr;
@@ -38,14 +38,17 @@ $(".get-music").click(function (event) {
     })
         .then(function (response) {
             var ageResponse = response.faces[0].attributes.age.value;
+            var genderResponse = response.faces[0].attributes.gender.value;
             console.log(ageResponse);
+            console.log(genderResponse);
+            database.ref().push({
+                Name: userName,
+                Age: ageResponse,
+                gender: genderResponse,
+                link: faceLink,
+            })
         });
-
-    database.ref().push({
-        Name: userName,
-        Age: ageResponse,
-
-    })
+    $("form").trigger("reset")
 });
 
 
