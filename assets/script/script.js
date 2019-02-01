@@ -1,20 +1,21 @@
-// var config = {
-//     apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
-//     authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
-//     databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
-//     projectId: "train-scheduler-assignme-c1fd7",
-//     storageBucket: "",
-//     messagingSenderId: "931949793399"
-// };
-// firebase.initializeApp(config);
+var config = {
+    apiKey: "AIzaSyDlzR-M7KYpIXtNC9Lk-CfHo8vBpLc_XZA",
+    authDomain: "grp-project.firebaseapp.com",
+    databaseURL: "https://grp-project.firebaseio.com",
+    projectId: "grp-project",
+    storageBucket: "grp-project.appspot.com",
+    messagingSenderId: "751791086273"
+};
+firebase.initializeApp(config);
 
-// var database = firebase.database();
+var database = firebase.database();
 
 $(".get-music").click(function (event) {
     event.preventDefault();
 
-    // Variable for file path to be uploaded
-    // var faceFile = "~/images/test.jpg";
+    // User's name
+    var userName = $("#user-name").val().trim();
+    // URL for link to user's photo
     var faceLink = $("#user-link").val().trim();
     // API Key:
     var apiKey = "fc3rHjH50Us_jhP1zC0V26KkykD96fib";
@@ -28,6 +29,7 @@ $(".get-music").click(function (event) {
         "&api_secret=" + apiSecret + "&image_url=" + faceLink + "&return_attributes=" + apiAttr;
 
     console.log(facePlusURL);
+    console.log(userName);
 
     // Ajax call here -----------------------------------------------------------------------------------------
     $.ajax({
@@ -39,10 +41,11 @@ $(".get-music").click(function (event) {
             console.log(ageResponse);
         });
 
-        database.ref().push({
-            Age: ageResponse,
+    database.ref().push({
+        Name: userName,
+        Age: ageResponse,
 
-        })
+    })
 });
 
 
