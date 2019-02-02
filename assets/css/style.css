@@ -37,6 +37,7 @@ h1 {
 #heyThere {
     background-color: #000000;
     padding: 10px;
+    line-height: 1.5;
 }
 
 p {
@@ -49,6 +50,7 @@ p {
     font-size: 16px;
     background: #000000;
     padding: 10px;
+    line-height: 2;
 }
 
 #userName {
@@ -99,4 +101,30 @@ input.user-new-year {
 .container-fluid {
     margin-left: 75px;
     margin-right: 75px;
+}
+
+.more-options {
+    font-size: 160%;
+    font-weight: 650;
+    text-align: center;
+}
+
+.user-or {
+    font-family: 'Varela Round', 'sans-serif';
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Media query to display age input field and submit button when the screen is small. */
+
+@media (max-width: 1212px) {
+    .user-new-year {
+        width: auto;
+        margin-bottom: 15px;
+    }
+
+    .get-more-results {
+        align-content: center;
+        justify-content: center;
+    }
 }
