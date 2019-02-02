@@ -8,6 +8,7 @@
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Google Fonts Link -->
     <link href="https://fonts.googleapis.com/css?family=Staatliches|Varela+Round" rel="stylesheet">
@@ -15,27 +16,42 @@
 </head>
 
 <body>
-    <!-- Sticky top Div container for the navbar -->
-    <div class="sticky-top">
-        <!-- Start of nav bar class and Divs -->
-        <nav class="navbar text-white" id="navBar">
+    <!-- Start of nav bar class and Divs -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="navBar">
+        <div class="col-xl-10 col-lg-9 col-md-10 col-sm-9 col-8">
             <!-- Title and our page image-icon. Inside the sticky navbar but not a link. -->
             <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="assets/images/logo.png"
-                width="auto" height="15" alt="" id="logoImg"></Span></span>
+                        width="auto" height="15" alt="" id="logoImg"></Span></span>
+        </div>
 
-            <!-- Links leading to other pages. -->
-            <a class="nav-item navbar-link" href="index.html">HOME</a>
-            <a class="nav-item navbar-link active" href="results.html">RESULTS</a>
-            <a class="nav-item navbar-link" href="#">ABOUT</a>
-        </nav>
+        <div class="col-xl-2 col-lg-3 col-md-2 col-sm-3 col-4">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="results.html">RESULTS<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ABOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
     <!-- Jumbotron displaying the users name and the image they uploaded. -->
     <div class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container">
-            <h1 class="display-4 font-weight-normal text-white">HEY NICE PIC,<span id="userName">__________.</span> <span class="user-picture ml-5"><img
-                        src="https://via.placeholder.com/150"></span></h1>
+            <h1 class="display-4 font-weight-normal text-white">HEY NICE PIC,<span id="userName">__________.</span>
+                <span class="user-picture ml-5"><img src="https://via.placeholder.com/150"></span></h1>
             <p class="lead text-white font-weight-bold">CHECK OUT YOUR TUNES BELOW!</p>
         </div>
     </div>
@@ -207,7 +223,7 @@
     <script src="assets/script/script.js"></script>
 
     <!-- Javascript References -->
-    <script src="https://unpkg.com/react/umd/react.production.js" crossorigin/>
+    <script src="https://unpkg.com/react/umd/react.production.js" crossorigin />
     <script src="https://unpkg.com/react-dom/umd/react-dom.production.js" crossorigin/>
     <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin/>
     <script>var Alert = ReactBootstrap.Alert;</script>
