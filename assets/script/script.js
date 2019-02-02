@@ -51,7 +51,10 @@ $(".get-music").click(function (event) {
                 gender: genderResponse,
                 link: faceLink,
             });
-            localStorage.setItem("API-age", ageResponse);
+            var currentYear = new Date().getFullYear();
+            var eighteenYear = currentYear - ageResponse + 18
+            localStorage.setItem("ageResponse", ageResponse);
+            localStorage.setItem("eighteenYear", eighteenYear)
             location.assign("results.html");
         });
 
