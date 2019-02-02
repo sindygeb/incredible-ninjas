@@ -51,6 +51,17 @@ $(".get-music").click(function (event) {
                 gender: genderResponse,
                 link: faceLink,
             });
+      
+            localStorage.setItem("API-age", ageResponse);
+            under18();
+
+            //Modal function - Under 18
+            function under18() {
+                if (ageResponse <= 18) {
+                    $('#underageModal').modal('show');
+                }
+            };
+      
             var currentYear = new Date().getFullYear();
             var eighteenYear = currentYear - ageResponse + 18
             localStorage.setItem("ageResponse", ageResponse);
@@ -59,8 +70,6 @@ $(".get-music").click(function (event) {
         });
 
 })
-
-// Modal junk goes here (React Shiz)
 
 // Results page script here
 
