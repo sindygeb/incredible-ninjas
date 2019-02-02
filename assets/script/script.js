@@ -1,3 +1,8 @@
+$(window).on('load',function(){
+    MicroModal.init();
+    MicroModal.show('underageModal');
+});
+
 var config = {
     apiKey: "AIzaSyDlzR-M7KYpIXtNC9Lk-CfHo8vBpLc_XZA",
     authDomain: "grp-project.firebaseapp.com",
@@ -33,7 +38,7 @@ $(".get-music").click(function (event) {
     console.log(facePlusURL);
     console.log(userName);
     localStorage.setItem("userName", userName);
-
+    var ageResponse;
     // Ajax call here -----------------------------------------------------------------------------------------
     $.ajax({
         url: facePlusURL,
@@ -51,11 +56,18 @@ $(".get-music").click(function (event) {
                 link: faceLink,
             });
             localStorage.setItem("API-age", ageResponse);
+            under18();
+
+            // //Modal function - Under 18
+            // function under18() {
+            //     if (ageResponse <= 25) {
+            //         MicroModal.show('underageModal');
+            //         //$('#underageModal').modal('show');
+            //     }
+            // };
         });
 
 })
-
-// Modal junk goes here (React Shiz)
 
 //only 1995 from now on
 //create variables holding the top 10 songs

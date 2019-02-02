@@ -100,3 +100,10 @@ input.user-new-year {
     margin-left: 75px;
     margin-right: 75px;
 }
+.micro-modal {
+    font-family: 'Varela Round', sans-serif;
+
+}
+#modalBackground {
+    background-color: #ffffff;
+}
