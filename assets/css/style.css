@@ -9,24 +9,52 @@ img {
     margin-bottom: 10px;
 }
 
-nav {
+/* Styling the nav elements and links */
+
+#navBar {
     background-color: #00aea7;
+    padding-top: 15px;
 }
 
-.page-title {
+a.nav-item {
     color: #eeeeee;
-    font-weight: 600;
-    font-size: 150%;
-}
-/* Styling the nav elements and links */
-li.nav-item a {
-    color: #eeeeee;
-    /* margin-left: 15px; */
+    margin-right: 15px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
 }
 
 .active {
     text-decoration: underline;
 }
+
+/* Styling for welcome Text */
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+#heyThere {
+    background-color: #000000;
+    padding: 10px;
+}
+
+p {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+#heavyText {
+    font-size: 16px;
+    background: #000000;
+    padding: 10px;
+}
+
+#userName {
+    background-color: #000000;
+}
+
 /* Styling the cards that will contain the users results */
 .card {
     margin-bottom: 20px;
@@ -51,6 +79,14 @@ button.get-music {
     padding: 20px;
 }
 
+input.get-music {
+    border-radius: 45px;
+    padding: 20px;
+    background-color: #eeeeee;
+    color: #00aea7;
+    width: 15%;
+}
+
 button.add-decade, .subtract-decade {
     border-radius: 45px;
     padding: 10px;
@@ -60,12 +96,7 @@ input.user-new-year {
     height: 45px;
 }
 
-/* .container-fluid {
+.container-fluid {
     margin-left: 75px;
-} */
-
-@media (max-width: 576px) {
-    a.nav-item {
-        margin-left: 0px;
-    }
+    margin-right: 75px;
 }

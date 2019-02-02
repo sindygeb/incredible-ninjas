@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Varela+Round" rel="stylesheet">
+    <!-- Change Title when finished -->
     <title>Input Page</title>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- Start of nav bar class and Divs -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" id="navBar">
         <div class="col-xl-10 col-lg-9 col-md-10 col-sm-9 col-8">
-            <Span class="page-icon mr-3"><img src="https://via.placeholder.com/200" width="30" height="30" alt=""></Span><span
-                class="page-title">WHEN
-                I WAS 18</span>
+            <!-- Title and our page image-icon. Inside the sticky navbar but not a link. -->
+            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="assets/images/logo.png"
+                        width="auto" height="15" alt="" id="logoImg"></Span></span>
         </div>
 
         <div class="col-xl-2 col-lg-3 col-md-2 col-sm-3 col-4">
@@ -32,9 +37,6 @@
                         <a class="nav-link" href="index.html">HOME<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="results.html">RESULTS</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">ABOUT</a>
                     </li>
                 </ul>
@@ -42,51 +44,53 @@
         </div>
     </nav>
 
-
-    <!-- Jumbotron displaying the users name and the image they uploaded. -->
+    <!-- Jumbotron -->
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron bg-transparent">
-                    <h1 class="display-4 font-weight-bold text-white">HEY THERE, MUSIC LOVER.</h1>
-                    <p class="lead text-white">HAVE YOU EVER HEARD A SONG AND THOUGHT 'THIS TAKES ME BACK TO THE GOOD
-                        OLD
-                        DAYS'?<br />
-                        JUST UPLOAD YOUR <span class="font-weight-bold">MOST RECENT PHOTO*</span>, AND WE'LL BRING YOU
-                        THE
-                        JAMS
+                    <h1 class="display-4 font-weight-bold text-white" id="welcomeText"><span id="heyThere">HEY THERE,</span>
+                        MUSIC LOVER.</h1>
+                    <br><br>
+                    <p class="text-left">HAVE YOU EVER HEARD A SONG AND THOUGHT <span class="font-weight-bold" id="heavyText">
+                            THIS TAKES ME BACK TO THE GOOD OLD
+                            DAYS'?</span>
+
+                        <br><br>
+
+                        TELL US WHO YOU ARE, AND JUST UPLOAD YOUR <span class="font-weight-bold" id="heavyText">MOST
+                            RECENT PHOTO</span> AND WE'LL BRING YOU THE JAMS
                         THAT BRING ON THE NOSTALGIA!</p>
-                    <!-- Start of the input form -->
+
                 </div>
+                <!-- End of first row -->
             </div>
         </div>
 
+        <!-- User input -->
         <div class="row">
-            <div class="col-6">
+            <div class="col">
                 <div class="user-upload">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-lg" id="user-name" placeholder="ENTER YOUR NAME">
+                            <input type="text" class="form-control form-control-lg col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12 mb-4" id="user-name"
+                                placeholder="ENTER YOUR NAME">
                         </div>
-                </div>
 
-                <div class="form-group">
-                    <!-- need to look into how uploading files work -->
-                    <input type="file" name="myfile"> <span class="file-chosen text-white ml-3"></span>
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-lg col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12 mb-4" id="user-link"
+                                placeholder="ENTER THE LINK">
+                        </div>
+                        <!-- Submit button -->
+                        <button class="btn btn-success btn-lg get-music" type="submit">GET MY TUNES!</button>
+                    </form>
                 </div>
-
-                <button class="btn btn-success btn-lg get-music" type="submit">GET MY TUNES!</button>
-                </form>
             </div>
-            <!-- End of jumbotron and container -->
         </div>
-    </div>
+        <!-- End of container -->
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script src="assets/script/script.js"></script>

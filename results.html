@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css?family=Staatliches|Varela+Round" rel="stylesheet">
     <title>Results Page</title>
 </head>
 
@@ -15,14 +18,14 @@
     <!-- Sticky top Div container for the navbar -->
     <div class="sticky-top">
         <!-- Start of nav bar class and Divs -->
-        <nav class="navbar text-white">
+        <nav class="navbar text-white" id="navBar">
             <!-- Title and our page image-icon. Inside the sticky navbar but not a link. -->
-            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="https://via.placeholder.com/200"
-                        width="30" height="30" alt=""></Span>WHEN I WAS 18</span>
+            <span class="navbar-brand mb-0 h1 col-9"><Span class="page-icon mr-2"><img src="assets/images/logo.png"
+                width="auto" height="15" alt="" id="logoImg"></Span></span>
 
             <!-- Links leading to other pages. -->
             <a class="nav-item navbar-link" href="index.html">HOME</a>
-            <a class="nav-item navbar-link active" href="index2.html">RESULTS</a>
+            <a class="nav-item navbar-link active" href="results.html">RESULTS</a>
             <a class="nav-item navbar-link" href="#">ABOUT</a>
         </nav>
 
@@ -31,7 +34,7 @@
     <!-- Jumbotron displaying the users name and the image they uploaded. -->
     <div class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container">
-            <h1 class="display-4 font-weight-normal text-white">HEY NICE PIC,__________. <span class="user-picture ml-5"><img
+            <h1 class="display-4 font-weight-normal text-white">HEY NICE PIC,<span id="userName">__________.</span> <span class="user-picture ml-5"><img
                         src="https://via.placeholder.com/150"></span></h1>
             <p class="lead text-white font-weight-bold">CHECK OUT YOUR TUNES BELOW!</p>
         </div>
