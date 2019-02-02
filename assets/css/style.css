@@ -100,3 +100,9 @@ input.user-new-year {
     margin-left: 75px;
     margin-right: 75px;
 }
+
+#newPic {
+    width: 200px;
+    height: auto;
+    float: right;
+}

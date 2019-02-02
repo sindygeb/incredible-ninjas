@@ -33,6 +33,7 @@ $(".get-music").click(function (event) {
     console.log(facePlusURL);
     console.log(userName);
     localStorage.setItem("userName", userName);
+    localStorage.setItem("imgLink", faceLink);
 
     // Ajax call here -----------------------------------------------------------------------------------------
     $.ajax({
@@ -57,6 +58,14 @@ $(".get-music").click(function (event) {
 })
 
 // Modal junk goes here (React Shiz)
+
+// Results page script here
+
+// Write username to page from local storage
+$("#userName").text(localStorage.userName);
+
+// Write image file to page from local storage
+$(".user-picture").replaceWith("<img id='newPic' src=" + localStorage.imgLink + ">");
 
 //only 1995 from now on
 //create variables holding the top 10 songs
