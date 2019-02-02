@@ -51,6 +51,7 @@ $(".get-music").click(function (event) {
                 link: faceLink,
             });
             localStorage.setItem("API-age", ageResponse);
+            location.assign("results.html");
         });
 
 })
