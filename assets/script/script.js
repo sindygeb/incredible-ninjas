@@ -29,16 +29,163 @@ $("submit").click(function () {
 
 })
 
+// Modal junk goes here (React Shiz)
+class MyVerticallyCenteredModal extends React.Component {
+    render() {
+        return (
+            <Modal
+                {...this.props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Modal heading
+                </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <h4>Centered Modal</h4>
+                <p>
+                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+                    ac consectetur ac, vestibulum at eros.
+                </p>
+                </Modal.Body>
+                <Modal.Footer>
+                <Button onClick={this.props.onHide}>Close</Button>
+                </Modal.Footer>
+            </Modal>
+        );
+    }
+}
+
+class App extends React.Component {
+    constructor(...args) {
+        super(...args);
+
+        this.state = { modalShow: false };
+    }
+
+    render() {
+        let modalClose = () => this.setState({ modalShow: false });
+
+        return (
+            <ButtonToolbar>
+                <Button
+                variant="primary"
+                onClick={() => this.setState({ modalShow: true })}
+                >
+                Launch vertically centered modal
+                </Button>
+
+                <MyVerticallyCenteredModal
+                show={this.state.modalShow}
+                onHide={modalClose}
+                />
+            </ButtonToolbar>
+        );
+    }
+};
+
+render(<App />);
+
 // Firebase junk goes here
 var config = {
-    apiKey: "AIzaSyDwjy8NSU9Lrf25eDNOK7w1ATRuRHcMIbM",
-    authDomain: "train-scheduler-assignme-c1fd7.firebaseapp.com",
-    databaseURL: "https://train-scheduler-assignme-c1fd7.firebaseio.com",
-    projectId: "train-scheduler-assignme-c1fd7",
+    apiKey: "AIzaSyDlzR-M7KYpIXtNC9Lk-CfHo8vBpLc_XZA",
+    authDomain: "grp-project.firebaseapp.com",
+    databaseURL: "https://grp-project.firebaseio.com",
+    projectId: "grp-project",
     storageBucket: "",
-    messagingSenderId: "931949793399"
-};
+    messagingSenderId: "751791086273"
+  };
+
 firebase.initializeApp(config);
 
 var database = firebase.database();
 
+//only 1995 from now on
+//create variables holding the top 10 songs
+var song1 = { 
+    track: "Gangsta's Paradise",
+    artist: "Coolio featuring L.V.",
+    album_url: "../images/Gangsta's-Paradise.jpg",
+    track_url: "https://www.youtube.com/watch?v=fPO76Jlnz6c"
+};
+
+var song2 = { 
+    track: "Waterfalls",
+    artist: "TLC",
+    album_url: "../images/Crazy-Sexy-Cool.png",
+    track_url: "https://www.youtube.com/watch?v=8WEtxJ4-sh4"
+};
+
+var song3 = { 
+    track: "Creep",
+    artist: "TLC",
+    album_url: "../images/Crazy-Sexy-Cool.png",
+    track_url: "https://www.youtube.com/watch?v=LlZydtG3xqI"     
+};
+
+var song4 = { 
+    track: "Kiss from a Rose",
+    artist: "Seal",
+    album_url: "../images/Kiss-From-A-Rose.jpg",
+    track_url: "https://www.youtube.com/watch?v=AMD2TwRvuoU"        
+};
+
+var song5 = { 
+    track: "On Bended Knee",
+    artist: "Boyz II Men",
+    album_url: "../images/On-Bended_knee.jpg",
+    track_url: "https://www.youtube.com/watch?v=jSUSFow70no"        
+};
+
+var song6 = { 
+    track: "Another Night",
+    artist: "Real McCoy",
+    album_url: "../images/Another-Night.jpg",
+    track_url: "https://www.youtube.com/watch?v=Pav2f4b-1ZE"        
+};
+
+var song7 = { 
+    track: "Fantasy",
+    artist: "Mariah Carey",
+    album_url: "../images/Fantasy.png",
+    track_url: "https://www.youtube.com/watch?v=qq09UkPRdFY"        
+};
+
+var song8 = { 
+    track: "Take a Bow",
+    artist: "Madonna",
+    album_url: "../images/Take-a-Bow-Madonna.png",
+    track_url: "https://www.youtube.com/watch?v=XDeiovnCv1o"        
+};
+
+var song9 = { 
+    track: "Don't Take It Personal (Just One of Dem Days)",
+    artist: "Monica",
+    album_url: "../images/Don't-Take-It-Personal-(Just-One-of-Dem-Days).jpg",
+    track_url: "https://www.youtube.com/watch?v=asXau88O5Is"        
+};
+
+var song10 = { 
+    track: "This Is How We Do It",
+    artist: "Montell Jordan",
+    album_url: "../images/This-is-how-we-do-it.png",
+    track_url: "https://www.youtube.com/watch?v=0hiUuL5uTKc"        
+};
+
+//set the database to include the songs
+database.ref().set({
+    song1: song1,
+    song2: song2,
+    song3: song3,
+    song4: song4,
+    song5: song5,
+    song6: song6,
+    song7: song7,
+    song8: song8,
+    song9: song9,
+    song10: song10
+  });
