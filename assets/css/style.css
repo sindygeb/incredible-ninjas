@@ -1,7 +1,8 @@
 /* Universal stylings */
 body {
-    background-image: url("../images/background_header.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../images/background_02.png"), url("../images/positive.png");
+    background-repeat: no-repeat, repeat;
+    background-position: top left, bottom right;
     background-size: auto;
 }
 
@@ -63,28 +64,67 @@ p {
 }
 
 .card-title {
-    font-size: 150%;
+    font-size: 24px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 600;
 }
 
 .card-subtitle {
-    font-size: 140%;
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    color: #777777;
+}
+.tryAgain {
+    font-size: 20px;
+    font-family: 'Varela Round', sans-serif;
+    color: #777777;
 }
 
 .text-muted {
     font-size: 100%;
 }
 /* Styling for the buttons */
-button.get-music {
+#tunesBtn {
     background-color: #00aea7;
+    font-family: 'Varela Round', sans-serif;
     color: #eeeeee;
     border-radius: 45px;
     padding: 20px;
+    padding-left: 40px;
+    padding-right:  40px;
+    font-size: 24px;
+}
+#tunesBtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #172c6d;
+}
+#tunesBtn2 {
+    background-color: #00aea7;
+    font-family: 'Varela Round', sans-serif;
+    color: #eeeeee;
+    border-radius: 45px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right:  40px;
+    font-size: 20px;
+}
+#tunesBtn2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #172c6d;
+}
+
+
+input {
+    
+    font-family: 'Varela Round', sans-serif;
+    font-size: 14px;
 }
 
 input.get-music {
     border-radius: 45px;
     padding: 20px;
     background-color: #eeeeee;
+    font-family: 'Varela Round', sans-serif;
     color: #00aea7;
     width: 15%;
 }
@@ -96,11 +136,19 @@ button.add-decade, .subtract-decade {
 
 input.user-new-year {
     height: 45px;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .container-fluid {
     margin-left: 75px;
     margin-right: 75px;
+}
+.micro-modal {
+    font-family: 'Varela Round', sans-serif;
+
+}
+#modalBackground {
+    background-color: #ffffff;
 }
 
 .more-options {
@@ -113,7 +161,23 @@ input.user-new-year {
     font-family: 'Varela Round', 'sans-serif';
     color: #ffffff;
     background-color: #000000;
+    padding: 10px;
+    font-size: 20px;
 }
+.user-picture {
+    width: 200px;
+    height: auto;
+    float: right;
+    margin-top: 50px;
+}
+.jumbotron {
+    float: left;
+}
+#warningText {
+    color: #000000;
+    font-family: 'Varela Round', 'sans-serif';
+}
+
 
 .user-picture {
     float: right;
@@ -122,13 +186,13 @@ input.user-new-year {
 /* Media query to display age input field and submit button when the screen is small. */
 
 @media (max-width: 1212px) {
-    .user-new-year {
-        width: auto;
-        margin-bottom: 15px;
-    }
+.user-new-year {
+    width: auto;
+    margin-bottom: 15px;
+}
 
-    .get-more-results {
-        align-content: center;
-        justify-content: center;
-    }
+.get-more-results {
+    align-content: center;
+    justify-content: center;
+}
 }
