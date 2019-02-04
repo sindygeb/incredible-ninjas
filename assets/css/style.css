@@ -56,6 +56,7 @@ p {
 
 #userName {
     background-color: #000000;
+    padding: 10px;
 }
 
 /* Styling the cards that will contain the users results */
