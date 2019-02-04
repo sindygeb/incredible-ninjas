@@ -51,7 +51,7 @@ $(".get-music").click(function (event) {
                 gender: genderResponse,
                 link: faceLink,
             });
-      
+
             localStorage.setItem("API-age", ageResponse);
             under18();
 
@@ -61,7 +61,7 @@ $(".get-music").click(function (event) {
                     $('#underageModal').modal('show');
                 }
             };
-      
+            
             var currentYear = new Date().getFullYear();
             var eighteenYear = currentYear - ageResponse + 18
             localStorage.setItem("ageResponse", ageResponse);
