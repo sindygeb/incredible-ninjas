@@ -76,6 +76,9 @@ $(".get-music").click(function (event) {
 // Write username to page from local storage
 $("#userName").text(localStorage.userName);
 
+// Write age to page from local storage
+$("#userAge").text(localStorage.ageResponse);
+
 // Write image file to page from local storage
 $(".user-picture").replaceWith("<img id='newPic' src=" + localStorage.imgLink + ">");
 
