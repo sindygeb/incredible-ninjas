@@ -77,6 +77,12 @@ p {
     font-size: 40px;
 }
 
+#eighteenYear {
+    font-family: 'Staatliches', cursive;
+    background-color: #000000;
+    padding: 10px;
+}
+
 /* Styling the cards that will contain the users results */
 .card {
     margin-bottom: 20px;
