@@ -41,6 +41,12 @@ h1 {
     font-size: 60px;
     letter-spacing: 2px;
 }
+
+h2 {
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 2px;
+}
+
 #heyThere {
     background-color: #000000;
     padding: 10px;
@@ -62,6 +68,13 @@ p {
 
 #userName {
     background-color: #000000;
+}
+
+#userAge {
+    font-family: 'Staatliches', cursive;
+    background-color: #000000;
+    padding: 10px;
+    font-size: 40px;
 }
 
 /* Styling the cards that will contain the users results */
