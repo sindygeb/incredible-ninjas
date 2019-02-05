@@ -210,6 +210,12 @@ $(document).ready(function () {
     };
 });
 
+
+var homepageImage = document.getElementById('logoImg')
+
+$(homepageImage).click(function(){
+    window.location = './index.html'
+  });
 // var ref = firebase.database().ref();
 
 // ref.on("value", function (snapshot) {
@@ -217,3 +223,4 @@ $(document).ready(function () {
 // });
 
 // console.log(snapshot.val.song1.track);
+
