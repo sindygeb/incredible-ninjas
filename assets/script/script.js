@@ -80,7 +80,7 @@ $("#userName").text(localStorage.userName);
 $("#userAge").text(localStorage.ageResponse);
 
 // Write 'year you were 18' to results
-$("#eighteenYear").text(localStorage.eighteenYear);
+$("#eighteenYear").text(localStorage.eighteenYear + "!");
 
 // Write image file to page from local storage
 $(".user-picture").replaceWith("<img id='newPic' src=" + localStorage.imgLink + ">");
