@@ -10,67 +10,76 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+var userName = "";
+
 // Image address: https://www.lifelinkiii.com/wp-content/uploads/2018/10/Matt_Smiles.jpg
 
 $(".get-music").click(function (event) {
+
     event.preventDefault();
 
     // User's name
-    var userName = $("#user-name").val().trim();
+    userName = $("#user-name").val().trim();
     // URL for link to user's photo
-    var faceLink = $("#user-link").val().trim();
-    // API Key:
-    var apiKey = "fc3rHjH50Us_jhP1zC0V26KkykD96fib";
-    // API Secret
-    var apiSecret = "xq072ifDu6LeqQf3uOtY0oj6EkxJlGqf";
-    // Attribute request
-    // Can use none; gender; AGE; smiling; headpose; facequality; + more in API documentation
-    var apiAttr = "age,gender";
-    // Build URL with key & attribute request
-    var facePlusURL = "https://api-us.faceplusplus.com/facepp/v3/detect" + "?api_key=" + apiKey +
-        "&api_secret=" + apiSecret + "&image_url=" + faceLink + "&return_attributes=" + apiAttr;
 
-    console.log(facePlusURL);
-    console.log(userName);
-    localStorage.setItem("userName", userName);
-    localStorage.setItem("imgLink", faceLink);
+    if (userName !== "") {
 
-    // Ajax call here -----------------------------------------------------------------------------------------
-    $.ajax({
-        url: facePlusURL,
-        method: "POST"
-    })
-        .then(function (response) {
-            var ageResponse = response.faces[0].attributes.age.value;
-            var genderResponse = response.faces[0].attributes.gender.value;
-            console.log(ageResponse);
-            console.log(genderResponse);
-            database.ref().push({
-                Name: userName,
-                Age: ageResponse,
-                gender: genderResponse,
-                link: faceLink,
+        var faceLink = $("#user-link").val().trim();
+        // API Key:
+        var apiKey = "fc3rHjH50Us_jhP1zC0V26KkykD96fib";
+        // API Secret
+        var apiSecret = "xq072ifDu6LeqQf3uOtY0oj6EkxJlGqf";
+        // Attribute request
+        // Can use none; gender; AGE; smiling; headpose; facequality; + more in API documentation
+        var apiAttr = "age,gender";
+        // Build URL with key & attribute request
+        var facePlusURL = "https://api-us.faceplusplus.com/facepp/v3/detect" + "?api_key=" + apiKey +
+            "&api_secret=" + apiSecret + "&image_url=" + faceLink + "&return_attributes=" + apiAttr;
+
+        // console.log(facePlusURL);
+        // console.log(userName);
+        localStorage.setItem("userName", userName);
+        localStorage.setItem("imgLink", faceLink);
+
+        // Ajax call here -----------------------------------------------------------------------------------------
+        $.ajax({
+            url: facePlusURL,
+            method: "POST"
+        })
+            .then(function (response) {
+                var ageResponse = response.faces[0].attributes.age.value;
+                var genderResponse = response.faces[0].attributes.gender.value;
+                // console.log(ageResponse);
+                // console.log(genderResponse);
+                database.ref().push({
+                    Name: userName,
+                    Age: ageResponse,
+                    gender: genderResponse,
+                    link: faceLink,
+                });
+
+                localStorage.setItem("API-age", ageResponse);
+                under18();
+
+                //Modal function - Under 18
+                function under18() {
+                    if (ageResponse <= 18) {
+                        $('#underageModal').modal('show');
+                    } else {
+                        location.assign("results.html");
+                    }
+                };
+
+                var currentYear = new Date().getFullYear();
+                var eighteenYear = currentYear - ageResponse + 18
+                localStorage.setItem("ageResponse", ageResponse);
+                localStorage.setItem("eighteenYear", eighteenYear)
             });
-
-            localStorage.setItem("API-age", ageResponse);
-            under18();
-
-            //Modal function - Under 18
-            function under18() {
-                if (ageResponse <= 18) {
-                    $('#underageModal').modal('show');
-                } else {
-                    location.assign("results.html");
-                }
-            };
-
-            var currentYear = new Date().getFullYear();
-            var eighteenYear = currentYear - ageResponse + 18
-            localStorage.setItem("ageResponse", ageResponse);
-            localStorage.setItem("eighteenYear", eighteenYear)
-        });
-
-})
+    }
+    else {
+        $("#imageModal").modal("show");
+    };
+});
 
 // Results page script here
 
@@ -178,8 +187,8 @@ database.ref().set({
 var songs = [];
 
 //loop that accesses all of the firebase key objects and stores them in our songs array
-for(i = 1; i <= 10; i +=1){
-    firebase.database().ref("song" + i).on("value", function (snapshot){
+for (i = 1; i <= 10; i += 1) {
+    firebase.database().ref("song" + i).on("value", function (snapshot) {
         var song = snapshot.val();
         songs.push(song);
     });
@@ -213,9 +222,9 @@ $(document).ready(function () {
 
 var homepageImage = document.getElementById('logoImg')
 
-$(homepageImage).click(function(){
+$(homepageImage).click(function () {
     window.location = './index.html'
-  });
+});
 // var ref = firebase.database().ref();
 
 // ref.on("value", function (snapshot) {
