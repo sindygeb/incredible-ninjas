@@ -169,7 +169,7 @@ database.ref().set({
 var songs = [];
 
 //loop that accesses all of the firebase key objects and stores them in our songs array
-for(i = 1; i < 11; i +=1){
+for(i = 9; i > -1; i -=1){
     firebase.database().ref("song" + i).on("value", function (snapshot){
         var song = snapshot.val();
         songs.push(song);
@@ -184,7 +184,7 @@ for(i = 0; i < 10; i +=1){
     var trackUrl = songs[i].track_url
     var imageUrl = songs[i].album_url
     console.log(imageUrl)
-    $(".user-results").append(
+    $(".user-results").prepend(
         '<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">' +
                 '<div class="card">' + 
                     '<div class="card-body">' +
