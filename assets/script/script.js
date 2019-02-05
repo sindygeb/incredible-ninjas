@@ -177,8 +177,8 @@ database.ref().set({
 var songs = [];
 
 //loop that accesses all of the firebase key objects and stores them in our songs array
-for (i = 0; i < 10; i += 1) {
-    firebase.database().ref("song" + i).on("value", function (snapshot) {
+for(i = 1; i <= 10; i +=1){
+    firebase.database().ref("song" + i).on("value", function (snapshot){
         var song = snapshot.val();
         songs.push(song);
     });

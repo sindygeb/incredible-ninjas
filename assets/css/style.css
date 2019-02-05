@@ -85,17 +85,18 @@ p {
 
 /* Styling the cards that will contain the users results */
 .card {
+    height: 90%;
     margin-bottom: 20px;
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: 120%;
     font-family: 'Varela Round', sans-serif;
     font-weight: 600;
 }
 
 .card-subtitle {
-    font-size: 20px;
+    font-size: 110%;
     font-family: 'Varela Round', sans-serif;
     color: #777777;
 }
