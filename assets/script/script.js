@@ -59,6 +59,8 @@ $(".get-music").click(function (event) {
             function under18() {
                 if (ageResponse <= 18) {
                     $('#underageModal').modal('show');
+                } else {
+                    location.assign("results.html");
                 }
             };
             
@@ -66,7 +68,6 @@ $(".get-music").click(function (event) {
             var eighteenYear = currentYear - ageResponse + 18
             localStorage.setItem("ageResponse", ageResponse);
             localStorage.setItem("eighteenYear", eighteenYear)
-            location.assign("results.html");
         });
 
 })

@@ -114,7 +114,6 @@ p {
     background-color: #172c6d;
 }
 
-
 input {
     
     font-family: 'Varela Round', sans-serif;
@@ -165,7 +164,7 @@ input.user-new-year {
     padding: 10px;
     font-size: 20px;
 }
-.user-picture {
+#newPic {
     width: 200px;
     height: auto;
     float: right;
@@ -179,6 +178,26 @@ input.user-new-year {
     font-family: 'Varela Round', 'sans-serif';
 }
 
+/* Modal Styling */
+
+.modal-title {
+    font-family: 'Staatliches', cursive;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}
+.modal-body {
+    font-family: 'Varela Round', 'sans-serif';
+    color: #777777;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+#selfiePic {
+    width: 20%;
+}
 
 /* Media query to display age input field and submit button when the screen is small. */
 

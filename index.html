@@ -78,21 +78,27 @@
         <div class="row">
             <div class="col">
                 <div class="user-upload">
-                    <form>
+                    <form class="needs-validation" novalidate>
                         <div class="form-group">
                             <input type="text" class="form-control form-control-lg col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12 mb-4"
-                                id="user-name" placeholder="ENTER YOUR NAME">
+                                id="user-name" placeholder="ENTER YOUR NAME" required>
+                            <div class="invalid-feedback">
+                                Please enter your name!
+                            </div>
                         </div>
 
                         <div class="form-group form-inline">
                             <input type="text" class="form-control form-control-lg col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12 mb-4"
-                                id="user-link" placeholder="ENTER THE LINK">
+                                id="user-link" placeholder="ENTER THE LINK" required>
+                            <div class="invalid-feedback">
+                                Please provide a link!
+                            </div>
 
-                                <div class="col-xl-1 col-lg-6 col-md-7 col-sm-9 col-9 mb-4 ml-4 more-options"><span class="user-or">OR</span></div>
+                            <div class="col-xl-1 col-lg-6 col-md-7 col-sm-9 col-9 mb-4 ml-4 more-options"><span class="user-or">OR</span></div>
 
                             <input type="number" class="form-control form-control-lg col-xl-5 col-lg-7 col-md-8 col-sm-10 col-12 mb-4"
                                 id="user-enter-age" placeholder="MANUALLY ENTER YOUR AGE">
-                            <p id="warningText">*IF YOU DO BOTH, WE'RE GONNA GO WITH THE PIC FIRST, DUDE.</p>
+                            <p id="warningText">*IF YOU DO BOTH, WE'RE GONNA GO WITH THE PIC DUDE.</p>
 
                         </div>
 
@@ -113,18 +119,52 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Whoa Buddy!</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">WHOA BUDDY!</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                Looks like you're under 18! How could you possibly underage nostalgia, kid?
+                                LOOKS LIKE YOU'RE UNDER 18, KID. YOU'RE TOO YOUNG FOR NOSTALGIA!
 
                                 <br><br>
+                                <img src="assets/images/baby.png" id="modalImage">
+                                <br><br>
 
-                                Or... maybe you have a baby face? Lucky you! Go ahead and manually enter your birth day to find tunes!
+                                OR MAYBE YOU HAVE A YOUTHFUL APPEARANCE? IF SO, ENTER YOUR AGE MANUALLY!
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for no Link -->
+    <div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div tabindex="-1" data-micromodal-close >
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">WHOA BUDDY!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                LOOKS LIKE YOU FORGOT TO ADD YOUR PIC!
+                                <br><br>
+                                <img src="assets/images/selfie.png" id="modalImage">
+                                <br><br>
+                                LINK US TO YOUR MOST RECENT PHOTO AND WE'LL GRAB YOUR TUNES!
+                            </div>
+                            <br>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
