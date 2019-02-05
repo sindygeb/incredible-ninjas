@@ -201,7 +201,7 @@ $(document).ready(function () {
             '<h5 class="card-title">' + track + '</h5>' +
             '<h6 class="card-subtitle mb-2">' + artist + '</h6>' +
             '<div class="card-text">' +
-            '<a href="' + trackUrl + '" class="card-link">Link to the song / track</a>' +
+            '<a href="' + trackUrl + '" class="card-link" target="_blank">Link to the song / track</a>' +
             '</div>' +
             '</div>' +
             '</div>' +
