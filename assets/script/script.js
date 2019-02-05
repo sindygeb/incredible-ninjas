@@ -84,70 +84,70 @@ $(".user-picture").replaceWith("<img id='newPic' src=" + localStorage.imgLink + 
 var song1 = {
     track: "Gangsta's Paradise",
     artist: "Coolio featuring L.V.",
-    album_url: "../images/Gangsta's-Paradise.jpg",
+    album_url: "../incredible-ninjas/assets/images/Gangsta's-Paradise.jpg",
     track_url: "https://www.youtube.com/watch?v=fPO76Jlnz6c"
 };
 
 var song2 = {
     track: "Waterfalls",
     artist: "TLC",
-    album_url: "../images/Crazy-Sexy-Cool.png",
+    album_url: "../incredible-ninjas/assets/images/Crazy-Sexy-Cool.png",
     track_url: "https://www.youtube.com/watch?v=8WEtxJ4-sh4"
 };
 
 var song3 = {
     track: "Creep",
     artist: "TLC",
-    album_url: "../images/Crazy-Sexy-Cool.png",
+    album_url: "../incredible-ninjas/assets/images/Crazy-Sexy-Cool.png",
     track_url: "https://www.youtube.com/watch?v=LlZydtG3xqI"
 };
 
 var song4 = {
     track: "Kiss from a Rose",
     artist: "Seal",
-    album_url: "../images/Kiss-From-A-Rose.jpg",
+    album_url: "../incredible-ninjas/assets/images/Kiss-From-A-Rose.jpg",
     track_url: "https://www.youtube.com/watch?v=AMD2TwRvuoU"
 };
 
 var song5 = {
     track: "On Bended Knee",
     artist: "Boyz II Men",
-    album_url: "../images/On-Bended_knee.jpg",
+    album_url: "../incredible-ninjas/assets/images/On-Bended-Knee.jpg",
     track_url: "https://www.youtube.com/watch?v=jSUSFow70no"
 };
 
 var song6 = {
     track: "Another Night",
     artist: "Real McCoy",
-    album_url: "../images/Another-Night.jpg",
+    album_url: "../incredible-ninjas/assets/images/Another-Night.jpg",
     track_url: "https://www.youtube.com/watch?v=Pav2f4b-1ZE"
 };
 
 var song7 = {
     track: "Fantasy",
     artist: "Mariah Carey",
-    album_url: "../images/Fantasy.png",
+    album_url: "../incredible-ninjas/assets/images/Fantasy.png",
     track_url: "https://www.youtube.com/watch?v=qq09UkPRdFY"
 };
 
 var song8 = {
     track: "Take a Bow",
     artist: "Madonna",
-    album_url: "../images/Take-a-Bow-Madonna.png",
+    album_url: "../incredible-ninjas/assets/images/Take-a-Bow-Madonna.png",
     track_url: "https://www.youtube.com/watch?v=XDeiovnCv1o"
 };
 
 var song9 = {
     track: "Don't Take It Personal (Just One of Dem Days)",
     artist: "Monica",
-    album_url: "../images/Don't-Take-It-Personal-(Just-One-of-Dem-Days).jpg",
+    album_url: "../incredible-ninjas/assets/images/Don't-Take-It-Personal-(Just-One-of-Dem-Days).jpg",
     track_url: "https://www.youtube.com/watch?v=asXau88O5Is"
 };
 
 var song10 = {
     track: "This Is How We Do It",
     artist: "Montell Jordan",
-    album_url: "../images/This-is-how-we-do-it.png",
+    album_url: "../incredible-ninjas/assets/images/This-is-how-we-do-it.png",
     track_url: "https://www.youtube.com/watch?v=0hiUuL5uTKc"
 };
 
@@ -163,4 +163,40 @@ database.ref().set({
     song8: song8,
     song9: song9,
     song10: song10
+});
+
+//array to store the songs after retrieving them from firebase
+var songs = [];
+
+//loop that accesses all of the firebase key objects and stores them in our songs array
+for(i = 1; i < 11; i +=1){
+    firebase.database().ref("song" + i).on("value", function (snapshot){
+        var song = snapshot.val();
+        songs.push(song);
+    });
+};
+//loop through the array and update the pages html !!!!! make sure to append these results !!!!!
+
+$(document).ready(function(){
+for(i = 0; i < 10; i +=1){
+    var track = songs[i].track
+    var artist = songs[i].artist
+    var trackUrl = songs[i].track_url
+    var imageUrl = songs[i].album_url
+    console.log(imageUrl)
+    $(".user-results").append(
+        '<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">' +
+                '<div class="card">' + 
+                    '<div class="card-body">' +
+                        '<img src="'+ imageUrl + '">' +
+                        '<h5 class="card-title">' + track + '</h5>' +
+                        '<h6 class="card-subtitle mb-2">' + artist + '</h6>' +
+                        '<div class="card-text">' +
+                            '<a href="'+ trackUrl + '" class="card-link">Link to the song / track</a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+        );
+    };
 });
