@@ -61,7 +61,7 @@ $(".get-music").click(function (event) {
                     $('#underageModal').modal('show');
                 }
             };
-            
+
             var currentYear = new Date().getFullYear();
             var eighteenYear = currentYear - ageResponse + 18
             localStorage.setItem("ageResponse", ageResponse);
@@ -79,8 +79,13 @@ $("#userName").text(localStorage.userName);
 // Write age to page from local storage
 $("#userAge").text(localStorage.ageResponse);
 
+// Write 'year you were 18' to results
+$("#eighteenYear").text(localStorage.eighteenYear);
+
 // Write image file to page from local storage
 $(".user-picture").replaceWith("<img id='newPic' src=" + localStorage.imgLink + ">");
+
+
 
 //only 1995 from now on
 //create variables holding the top 10 songs
@@ -180,26 +185,34 @@ for(i = 1; i <= 10; i +=1){
 };
 //loop through the array and update the pages html !!!!! make sure to append these results !!!!!
 
-$(document).ready(function(){
-for(i = 9; i > -1; i -=1){
-    var track = songs[i].track
-    var artist = songs[i].artist
-    var trackUrl = songs[i].track_url
-    var imageUrl = songs[i].album_url
-    console.log(imageUrl)
-    $(".user-results").prepend(
-        '<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">' +
-                '<div class="card">' + 
-                    '<div class="card-body">' +
-                        '<img src="'+ imageUrl + '">' +
-                        '<h5 class="card-title">' + track + '</h5>' +
-                        '<h6 class="card-subtitle mb-2">' + artist + '</h6>' +
-                        '<div class="card-text">' +
-                            '<a href="'+ trackUrl + '" class="card-link">Link to the song / track</a>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
+$(document).ready(function () {
+    for (i = 9; i > -1; i -= 1) {
+        var track = songs[i].track
+        var artist = songs[i].artist
+        var trackUrl = songs[i].track_url
+        var imageUrl = songs[i].album_url
+        // console.log(imageUrl)
+        $(".user-results").prepend(
+            '<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">' +
+            '<div class="card">' +
+            '<div class="card-body">' +
+            '<img src="' + imageUrl + '">' +
+            '<h5 class="card-title">' + track + '</h5>' +
+            '<h6 class="card-subtitle mb-2">' + artist + '</h6>' +
+            '<div class="card-text">' +
+            '<a href="' + trackUrl + '" class="card-link">Link to the song / track</a>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
             '</div>'
         );
     };
 });
+
+// var ref = firebase.database().ref();
+
+// ref.on("value", function (snapshot) {
+//     console.log(snapshot.val());
+// });
+
+// console.log(snapshot.val.song1.track);
