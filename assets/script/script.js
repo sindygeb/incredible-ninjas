@@ -169,7 +169,7 @@ database.ref().set({
 var songs = [];
 
 //loop that accesses all of the firebase key objects and stores them in our songs array
-for(i = 9; i > -1; i -=1){
+for(i = 0; i < 10; i +=1){
     firebase.database().ref("song" + i).on("value", function (snapshot){
         var song = snapshot.val();
         songs.push(song);
@@ -178,7 +178,7 @@ for(i = 9; i > -1; i -=1){
 //loop through the array and update the pages html !!!!! make sure to append these results !!!!!
 
 $(document).ready(function(){
-for(i = 0; i < 10; i +=1){
+for(i = 9; i > -1; i -=1){
     var track = songs[i].track
     var artist = songs[i].artist
     var trackUrl = songs[i].track_url
