@@ -203,3 +203,9 @@ for(i = 9; i > -1; i -=1){
         );
     };
 });
+
+var homepageImage = document.getElementById('logoImg')
+
+$(homepageImage).click(function(){
+    window.location = './index.html'
+  });
