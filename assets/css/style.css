@@ -8,6 +8,9 @@ body {
 
 img {
     margin-bottom: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Styling the nav elements and links */
