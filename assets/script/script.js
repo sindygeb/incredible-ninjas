@@ -75,6 +75,12 @@ $(".get-music").click(function (event) {
                 localStorage.setItem("ageResponse", ageResponse);
                 localStorage.setItem("eighteenYear", eighteenYear)
             });
+
+            $.ajaxSetup({
+                error: function() {
+                    $('#linkModal').modal('show');
+                }
+            })
     }
     else {
         $("#imageModal").modal("show");
